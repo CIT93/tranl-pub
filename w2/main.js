@@ -19,6 +19,12 @@ const Recycle = 16;
 const Transport = 6;
 
 // 9. Add up your points.
-const totalFootprint = myHouseMembers + HouseSize + Food + Water + Purchases + Waste - Recycle + Transport;
+const cfpTotal = myHouseMembers + HouseSize + Food + Water + Purchases + Waste - Recycle + Transport;
 
 // 10. Write JS to update the rendered html (index.html) with total footprint
+
+// JS codes for finding the h2 element in html
+const MyPoints = document.querySelector("h2");
+
+// Live updating the values in html
+MyPoints.textContent = cfpTotal;
