@@ -27,22 +27,25 @@ function TestFunction(numberInHousehold) {
 // If you live in an apartment, then add 2 points
 
 // Function for calculating household size
-let CarbonHouseSizePts = 0;
-function CalculateCarbonHouseSizePts(size) {
-    if (size === "large house") {
+
+function CalculateCarbonHouseSizePts(homesize) {
+    let CarbonHouseSizePts = 0;
+    if (homesize === "large house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 12;
     }
-    else if  (size === "medium house") {
+    else if  (homesize === "medium house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 7;
     }
-    else if (size === "small house") {
+    else if (homesize === "small house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 4;
     }
-    else if (size === "apartment") {
+    else if (homesize === "apartment") {
         CarbonHouseSizePts = CarbonHouseSizePts + 2;
     }
- console.log('I live in a ${size} and that makes my points total is: ${CarbonHouseSizePts}');
+ console.log(`I live in a ${homesize} and that would make my points is: ${CarbonHouseSizePts}`);
 }
+
+CalculateCarbonHouseSizePts("large house")
 
 
 
