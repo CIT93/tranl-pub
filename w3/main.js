@@ -1,3 +1,4 @@
+/*
 function TestFunction(numberInHousehold) {
     console.log("Inside the function")
     if (numberInHousehold === 1) {
@@ -17,7 +18,7 @@ function TestFunction(numberInHousehold) {
     } 
     console.log('Based on the numer of member of household of ${numberInHousehold} the points would be ${carbonFootprintPoints).');
 }
-
+*/
 
 
 // If you have a large house, then add 10 points to your score.
@@ -28,23 +29,24 @@ function TestFunction(numberInHousehold) {
 // Function for calculating household size
 let CarbonHouseSizePts = 0;
 function CalculateCarbonHouseSizePts(size) {
-    if (size = "large house") {
+    if (size === "large house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 12;
     }
-    else if  (size = "medium house") {
+    else if  (size === "medium house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 7;
     }
-    else if (size = "small house") {
+    else if (size === "small house") {
         CarbonHouseSizePts = CarbonHouseSizePts + 4;
     }
-    else if (size = "apartment") {
+    else if (size === "apartment") {
         CarbonHouseSizePts = CarbonHouseSizePts + 2;
     }
  console.log('I live in a ${size} and that makes my points total is: ${CarbonHouseSizePts}');
-
- TotalPoints = CarbonHouseSizePts + carbonFootprintPoints;
- console.log('My points total is: ${TotalPoints}')
 }
+
+
+
+
 
 
 
