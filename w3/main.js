@@ -1,4 +1,16 @@
-/*
+function determineHouseSizePts(size) {
+    if ( size === "large") {
+        carbonFootprintPoints = carbonFootprintPoints + 10;
+    } else if (size === "medium") {
+        carbonFootprintPoints = carbonFootprintPoints + 7;
+    } else if (size === "small") {
+        carbonFootprintPoints = carbonFootprintPoints + 4;
+    } else if (size === "apartment") {
+        carbonFootprintPoints = carbonFootprintPoints + 10;
+    }
+}
+
+
 function TestFunction(numberInHousehold) {
     console.log("Inside the function")
     if (numberInHousehold === 1) {
@@ -18,7 +30,25 @@ function TestFunction(numberInHousehold) {
     } 
     console.log('Based on the numer of member of household of ${numberInHousehold} the points would be ${carbonFootprintPoints).');
 }
-*/
+
+let carbonFootprintPoints = 0;
+
+// global scope
+determineHouseSizePts(5)
+determineHouseSizePts("apartment")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // If you have a large house, then add 10 points to your score.
@@ -27,6 +57,8 @@ function TestFunction(numberInHousehold) {
 // If you live in an apartment, then add 2 points
 
 // Function for calculating household size
+
+/*
 
 function CalculateCarbonHouseSizePts(homesize) {
     let CarbonHouseSizePts = 0;
@@ -48,10 +80,4 @@ function CalculateCarbonHouseSizePts(homesize) {
 CalculateCarbonHouseSizePts("large house")
 
 
-
-
-
-
-
-
-
+*/
