@@ -48,7 +48,7 @@ function displayOutput () {
         console.log(arr)
         const output = document.getElementById("output");
         const newP = document.createElement("p");
-        newP.textContent = `Carbon Foot total is ${arr[4]}`;
+        newP.textContent = `You have ${arr[0]} members in your household, your points will be ${arr[2]}. If your house size is ${arr[1]}, you will gain an additional ${arr[3]} points. Calculating your total points is: ${arr[4]}.`;
         output.appendChild(newP)
     }
 }
@@ -56,6 +56,8 @@ function displayOutput () {
 start(5, "apt");
 start(4, "large");
 start(3, "medium");
+start(2, "small");
+start(1, "apt");
 
 displayOutput ()
 
