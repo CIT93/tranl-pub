@@ -1,4 +1,4 @@
-// const cfpData = [];
+const cfpData = [];
 
 function determineHouseSizePts(size) {
     let carbonFootprintPoints = 0;
@@ -48,47 +48,37 @@ function start(houseHoldMembers, houseSize) {
    const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const carbonHouseSizePts = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + carbonHouseSizePts;
-    const cfpObj = {
+    cfpData.push({
         houseM: houseHoldMembers,
         houseS: houseSize,
         houseMPTS: houseHoldPTS,
         houseSPTS: carbonHouseSizePts,
         cfpTotal: total
-    }
-    
-    // do work here, set up an object with key value pairs that would store all the data, write a different display function that would only display the object that you've created. 
-
-
-
-
-
-
-
-    //cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, carbonHouseSizePts, total]);
-    // console.log(cfpData);
+    });
 }
+ 
 
-/*
 function displayOutput () {
-    for (arr of cfpData) {
+    for (obj of cfpData) {
+        console.log(obj)
         const output = document.getElementById("output");
         const newH2 = document.createElement("h2");
-        newH2.textContent = `Carbon Footprint ${arr[4]}`;
-        const  newH3 = document.createElement("h3");
-        newH3.textContent = `Based on numer in and size of home`
-        const newP = document.createElement("p");
-        newP.textContent = `This numer is based on the number of people in the house of ${arr[0]} (score: ${arr[3]})`;
-        newP.textContent += ` and a ${arr[1]} size of home (score:${arr[2]})`;
+        newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+       // const  newH3 = document.createElement("h3");
+       // newH3.textContent = `Based on numer in and size of home`
+       // const newP = document.createElement("p");
+       // newP.textContent = `This numer is based on the number of people in the house of ${arr[0]} (score: ${arr[3]})`;
+       // newP.textContent += ` and a ${arr[1]} size of home (score:${arr[2]})`;
         output.appendChild(newH2);
-        output.appendChild(newH3);
-        output.appendChild(newP);
-
+       // output.appendChild(newH3);
+      //  output.appendChild(newP);
     }
 }
-*/
+
 
 start(2, "apt");
 start(10, "large");
 start(2, "small");
 start(4, "medium");
 
+displayOutput
