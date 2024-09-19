@@ -46,7 +46,7 @@ function displayOutObj(obj) {
 
 }
 
-function start(houseHoldMembers, houseSize) {
+function start(houseHoldMembers, houseSize, firstname, lastname) {
    const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const carbonHouseSizePts = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + carbonHouseSizePts;
@@ -64,6 +64,7 @@ function start(houseHoldMembers, houseSize) {
 
 function displayOutput () {
     for (obj of cfpData) {
+        console.log(obj)
         const newH2 = document.createElement("h2");
         newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
         const  newH3 = document.createElement("h3");
@@ -86,8 +87,10 @@ FORM.addEventListener('submit', function(e){
     OUTPUT.innerHTML = "";
     displayOutput();
     FORM.reset();
-})
+});
 
 // Coding challenge:
 // First steps: I've added updates to the First and Last Names input for 20 maximum characters
-// 2nd step: I've added more into the function start, specifically the cfpData.push: for first name and last name
+// 2nd step: I've added more into the function start, specifically the cfpData.push: for first name and last name to fit like the rest.
+// 3rd step: I've added console.log(obj) in function displayOutput
+// 4th step: took me a bit to figure out, but I added both the first name and last name on the start function to actually make them work. Which actually help display the input.
