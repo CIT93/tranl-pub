@@ -97,3 +97,4 @@ FORM.addEventListener('submit', function(e){
 // 5th step: I fixed the wrong input value for each house size type in index.html
 // 6th step: I've added a FORM input to display the user's first and last name in DisplayOutput
 // 8th step: I've fix the addEventListener to add the firstName, lastName in the start function and fix the const householdMembers by addding parseINt.
+// At this point, I think i've fulfill most of the requirements? so I'll do the final commit and wait for classmates' input. 
