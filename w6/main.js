@@ -51,6 +51,8 @@ function start(houseHoldMembers, houseSize) {
     const carbonHouseSizePts = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + carbonHouseSizePts;
     cfpData.push({
+        firstName: firstname,
+        lastName: lastname,
         houseM: houseHoldMembers,
         houseS: houseSize,
         houseMPTS: houseHoldPTS,
@@ -86,8 +88,6 @@ FORM.addEventListener('submit', function(e){
     FORM.reset();
 })
 
-// Is the apartment score correct? If not? Why not? 
-// The score would not be correct, as the data is wrong for apartment and apt (it was right for me however, as I put the apartment data correct)
-
-// Why are we doing all this work in the form to make sure the user give us good data?
-// Data collecting is really important as you can use that data to help the user with their web browsing experience, or they don't have any data to give us to suppor their experience. 
+// Coding challenge:
+// First steps: I've added updates to the First and Last Names input for 20 maximum characters
+// 2nd step: I've added more into the function start, specifically the cfpData.push: for first name and last name
