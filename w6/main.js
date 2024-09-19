@@ -2,15 +2,15 @@ const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 const cfpData = [];
 
-function determineHouseSizePts(size) {
+function determineHouseSizePts(Housesize) {
     let carbonFootprintPoints = 0;
-    if ( size === "large") {
+    if ( Housesize === "large") {
         carbonFootprintPoints = 10;
-    } else if (size === "medium") {
+    } else if (Housesize === "medium") {
         carbonFootprintPoints = 7;
-    } else if (size === "small") {
+    } else if (Housesize === "small") {
         carbonFootprintPoints = 4;
-    } else if (size === "apartment") {
+    } else if (Housesize === "apartment") {
         carbonFootprintPoints = 2;
     }
     return carbonFootprintPoints;
@@ -47,7 +47,7 @@ function displayOutObj(obj) {
 }
 
 function start(houseHoldMembers, houseSize, firstname, lastname) {
-   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+    const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const carbonHouseSizePts = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + carbonHouseSizePts;
     cfpData.push({
@@ -68,9 +68,9 @@ function displayOutput () {
         const newH2 = document.createElement("h2");
         newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
         const  newH3 = document.createElement("h3");
-        newH3.textContent = `Based on numer in and size of home`
+        newH3.textContent = `Based on numer in and size of home of "${FORM.firstname.value} ${FORM.lastname.value}"`
         const newP = document.createElement("p");
-        newP.textContent = `This numer is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}) with the size (${obj.houseS}). Your total data point would be updated to (score:${obj.houseSPTS})`;
+        newP.textContent = `This numer is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}) with the size (${obj.houseS}). Total points would be (score:${obj.houseSPTS})`;
         OUTPUT.appendChild(newH2);
         OUTPUT.appendChild(newH3);
         OUTPUT.appendChild(newP);
@@ -81,9 +81,9 @@ FORM.addEventListener('submit', function(e){
     e.preventDefault();
     const firstName = FORM.firstname.value;
     const lastName = FORM.lastname.value;
-    const houseMembers = FORM.housem.value;
+    const houseMembers = parseInt(FORM.housem.value);
     const houseSize = FORM.houses.value;
-    start(houseMembers, houseSize);
+    start(houseMembers, houseSize, firstName,lastName);
     OUTPUT.innerHTML = "";
     displayOutput();
     FORM.reset();
@@ -94,3 +94,6 @@ FORM.addEventListener('submit', function(e){
 // 2nd step: I've added more into the function start, specifically the cfpData.push: for first name and last name to fit like the rest.
 // 3rd step: I've added console.log(obj) in function displayOutput
 // 4th step: took me a bit to figure out, but I added both the first name and last name on the start function to actually make them work. Which actually help display the input.
+// 5th step: I fixed the wrong input value for each house size type in index.html
+// 6th step: I've added a FORM input to display the user's first and last name in DisplayOutput
+// 8th step: I've fix the addEventListener to add the firstName, lastName in the start function and fix the const householdMembers by addding parseINt.
