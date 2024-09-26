@@ -4,7 +4,7 @@ function renderTblHeading () {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Name", "HouseHold", "House Size", "Footprint", "Actions",];
+    const headingTextArr = ["Name", "HouseHold Members", "House Size", "Footprint Points", "Actions",];
     headingTextArr.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
@@ -31,14 +31,14 @@ function renderTbl(data) {
      });
 
      // Buttons
-     const tdActions = document.createElement("td");
+     const td = document.createElement("td");
      const buttonEdit = document.createElement("button");
      const buttonDel = document.createElement("button");
      buttonEdit.textContent = "Edit";
      buttonDel.textContent = "Del";
-     tdActions.appendChild(buttonEdit);
-     tdActions.appendChild(buttonDel);
-     tr.appendChild(tdActions);
+     td.appendChild(buttonEdit);
+     td.appendChild(buttonDel);
+     tr.appendChild(td);
      tbody.appendChild(tr);
   });
 
