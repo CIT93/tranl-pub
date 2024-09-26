@@ -4,7 +4,7 @@ function renderTblHeading () {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Name", "HouseHolkd", "HouseSize", "Footprint", "Actions"];
+    const headingTextArr = ["Name", "HouseHold", "House Size", "Footprint", "Actions",];
     headingTextArr.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
@@ -17,28 +17,35 @@ function renderTblHeading () {
 }
 
 function renderTbl(data) {
-   const table = renderTblHeading();
-   const tbody = document.createElement("tbody");
-   const tr = document.createElement("tr");
-   const trTextArr = ["Rio", 3, "Large", 20];
-   trTextArr.forEach(function(text){
-    const td = document.createElement("td");
-    td.textContent = text;
-    tr.appendChild(td);
-   })
-   const td = document.createElement("td");
-   const btnEdit = document.createElement("button");
-   const btnDel = document.createElement("button");
-   btnEdit.textContent = "Edit";
-   btnDel.textContent = "Del";
-   td.appendChild(btnEdit);
-   td.appendChild(btnDel);
-   tr.appendChild(td);
-   tbody.appendChild(tr);
-   table.appendChild(tbody);
-   console.log(table)
+  const table = renderTblHeading();
+  const tbody = document.createElement("tbody");
+
+  // My attempt at the new forEach data
+  data.forEach(function(inputsObj) {
+     const tr = document.createElement("tr");
+     const values = [inputsObj.firstName,inputsObj.houseM, inputsObj.houseS, inputsObj.cfpTotal];
+     values.forEach(function(text) {
+        const td = document.createElement("td");
+        td.textContent = text;
+        tr.appendChild(td);
+     });
+
+     // Buttons
+     const tdActions = document.createElement("td");
+     const buttonEdit = document.createElement("button");
+     const buttonDel = document.createElement("button");
+     buttonEdit.textContent = "Edit";
+     buttonDel.textContent = "Del";
+     tdActions.appendChild(buttonEdit);
+     tdActions.appendChild(buttonDel);
+     tr.appendChild(tdActions);
+     tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
   TBL.appendChild(table);
 }
 
-export {renderTbl, renderTblHeading};
+export { renderTbl, renderTblHeading };
 
+// I tried following the instructions, got lost for a good while and had to keep track of so many lines of codes, and a part of it is still confusing but hopefully I fulfill the requirements? The website manage to work so yay! However, if not there's anything wrong or missing, any feedback is appreciated! Thank you!

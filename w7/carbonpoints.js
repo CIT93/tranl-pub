@@ -1,3 +1,5 @@
+const cfpData = [];
+
 function determineHouseSizePts(Housesize) {
     let carbonFootprintPoints = 0;
     if ( Housesize === "large") {
