@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 function renderTblHeading() {
   TBL.innerHTML = "";
@@ -22,7 +23,7 @@ function renderTblHeading() {
   return table;
 }
 
-function renderTblBtn(index, data) {
+function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const buttonEdit = document.createElement("button");
   const buttonDel = document.createElement("button");
@@ -39,7 +40,12 @@ function renderTblBtn(index, data) {
     renderTbl(data);
   })
   buttonEdit.addEventListener('click', function(e){
-    
+    FORM[1].value = obj.fistname
+    FORM[1].value = obj.houseM;
+    FORM[1].value = obj.houseS;
+    FORM[1].value = obj.cfpTotal;
+    data.splice(index, 1);
+    renderTbl(data);
   })
   return td;
 }
@@ -91,6 +97,3 @@ function renderTbl(data) {
 
 export { renderTbl, renderTblHeading };
 
-// Code challenge: First I comment out everything that need to redo, don't want to delete it since in case i need it
-// then I copy down some previously coded elements into the function such as the buttons and the appendchild
-// the result shows some output but wasn't exactly correct so I'll watch the coding solutions
