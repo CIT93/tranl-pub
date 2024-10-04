@@ -32,12 +32,19 @@ Additional notes after watching video:
  How do we do the edit?
 We can make the event listener functional and retrieve data from the array, doing so will hopefully update the submit button as well. 
 
-<h2> Discussion Coding Challenge
-1. Starting out, since we're creating a new form(index), I think we have to create a const for it at the very top so I made one in render.js
-2. Since the instruction mentions objects values that has already been entered, I assume we have to do the same thing as we did for the forEach function with obj, but this time, replacing it with the form
-3. I created 4 different forms for each values, first name, house members, house size and points total, based on main.js and the renderTBlheading. 
-4. Since this is an event listener, I copy down the data.splice from the buttonDel to match the buttonEdit
-5. I press the Edit button and it came up as error on line 47 of render.js. So I went over to chatGPT for suggestion and it mentions I forgot to put in the number value for the FORM. So I fixed that.
-6. However, it still came up as underfined so I'll have to figure out what to do next.
-6. I couldn't really figure out how to solve the table heading so I'll watch the solution video after
-7. I check the inspect and there wasn't any errors in the console, so I'll submit what I have 
+# Discussion Coding Challenge
+- Starting out, since we're creating a new form(index), I think we have to create a const for it at the very top so I made one in render.js
+- Since the instruction mentions objects values that has already been entered, I assume we have to do the same thing as we did for the forEach function with obj, but this time, replacing it with the form
+- I created 4 different forms for each values, first name, house members, house size and points total, based on main.js and the renderTBlheading. 
+- Since this is an event listener, I copy down the data.splice from the buttonDel to match the buttonEdit
+- I press the Edit button and it came up as error on line 47 of render.js. So I went over to chatGPT for suggestion and it mentions I forgot to put in the number value for the FORM. So I fixed that.
+- However, it still came up as underfined so I'll have to figure out what to do next.
+- I couldn't really figure out how to solve the table heading so I'll watch the solution video after
+- I check the inspect and there wasn't any errors in the console, so I'll submit what I have 
+
+# After Discussion Coding Solution
+- TBL.innerHTML = ""; is responsible for clearing the table
+- if(data.length !== 0) this is use to check if there is data to display
+- the renderTBl function is responsible for clearing any existing content in a table
+- the renderTblBtn function is responsible for the Edit and Delete button for the table row.
+- the forms we created helps add functionality to it, and it refreshes the table after removing previous data. 
