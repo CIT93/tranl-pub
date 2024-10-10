@@ -62,3 +62,12 @@ We can make the event listener functional and retrieve data from the array, doin
 - It's useful for saving things like user preferences, settings data.
 - Why do we need it? It is to save information that the user might want to access later and keep the data consistance for better user's experience. 
 
+# Form validation
+- First off, I decided to went with the first option
+I started working on the index.html and work on the alert by creating a span for both last name and last name.
+- Then i tried to intergrate the your javascript into the main.js. Starting by creating a new function within it for the validateFields
+- I started getting a lot of errors, then i realize I didn't add the event listener form for the first name & last name validate fields, so I added it
+- I started working on the function for the submit button, using if statements
+- After I write the if statements, I sandwiched the other codes into it. 
+- There's still some errors that came up, so i took some time to clean up and remove some codes that we don't need anymore. 
+- Will fix my codes after awaiting feedback.
