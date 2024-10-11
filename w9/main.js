@@ -3,6 +3,9 @@ import { determineHouseHoldPts, determineHouseSizePts } from "./carbonpoints.js"
 import { FORM } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 
+const firstNameEl = document.getElementById('firstName');
+const lastNameEl = document.getElementById('lastName');
+const submitEl = document.getElementById("submitError");
 
 function start(houseHoldMembers, houseSize, firstname, lastname) {
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
@@ -24,7 +27,7 @@ renderTbl(cfpData);
 // New validateField Event
 function validateField (event) {
     const field = event.target.value;
-    const fieldId = event.target.name;
+    const fieldId = event.target.id;
     const fieldError = document.getElementById(`${fieldId}Error`);
 
     if (field === '') {
@@ -35,26 +38,27 @@ function validateField (event) {
         event.target.classList.remove('invalid');
     }
 };
-FORM.firstname.addEventListener('blur', validateField);
-FORM.lastname.addEventListener('blur', validateField);
+firstNameEl.addEventListener('blur', validateField);
+lastNameEl.addEventListener('blur', validateField);
 
 // Updated the event listener
 FORM.addEventListener('submit', function(e){
     e.preventDefault();
     const firstName = FORM.firstname.value;
     const lastName = FORM.lastname.value;
-    const firstNameIsValid = firstName.value !== '';
-    const lastNameIsValid = lastName.value !== '';
-    if (firstNameIsValid === true || lastNameIsValid === true) {
+    const firstNameIsValid = firstNameEl.value !== '';
+    const lastNameIsValid = lastNameEl.value !== '';
+    if (firstNameIsValid && lastNameIsValid) {
+        submitEl.textContent = '';
         const houseMembers = parseInt(FORM.housem.value);
         const houseSize = FORM.houses.value;
         start(houseMembers, houseSize, firstName, lastName);
         saveLS(cfpData);
         renderTbl(cfpData);
     } else {
-        this.textContent("please fill out the form")
+        submitEl.textContent = "Form requires first name and last name";
     }
-    FORM.reset();
+
 });
 
 
