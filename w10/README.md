@@ -84,3 +84,11 @@ I started working on the index.html and work on the alert by creating a span for
 - Some of the functions you mention I understood quite a bit as this has been covered over by my other Javascript class on campus. I've also gotten some help from my professor with writing the decision app too so it was really helpful. 
 - From further research, IIFE (stands for Immediately Invoked Function Expression) basically is a function that runs immediately after it is defined.
 - the add2 is a function that takes any numbers then add 2 + in increments
+
+# Week 10 Coding Challenge
+- After watching the initial instruction, I started tackling every functions I see in each of the modules. Starting from main.js and working towards other modules. 
+- I notice that some functions requires it being encased in parenthesis or else it would break the codes so I kept them in. For example, some in render.js
+- Doing the arrows was relatively manageable, the hard part was definitely the 2nd and 3rd part of the challenge. 
+- Based on the your question, 2 functions that we use quite frequently that I notice are the Household Members, House Size, as it is shown on the form of the website, so I choose those. The main function for those are in the carbonpoints.js so I started working on those. 
+- I figured that I had to change the variable in the carbonpoints.js first and foremost to update their parameters. For that I chose the "small" for the house size and the "1" for the number in household since they are the smallest values and should be easy to track. 
+- At this point, for part 3 I kinda have a brain fart and unsure of what to do on how to implement the rest operator so I'll submit what I have and wait feedback from classmates. I'll update it again later. 

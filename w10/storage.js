@@ -1,6 +1,5 @@
 
-
-const getLS = function() {
+const getLS = () => {
     const retrievedArry = localStorage.getItem('cfp');
     if(retrievedArry !== null) {
         return JSON.parse(retrievedArry);
@@ -10,7 +9,7 @@ const getLS = function() {
 };
 const cfpData = getLS();
 
-const saveLS = function(cfpData) {
+const saveLS = cfpData => {
     const seralizedARR = JSON.stringify(cfpData);
     localStorage.setItem('cfp', seralizedARR);
 }

@@ -1,6 +1,6 @@
 const cfpData = [];
 
-const determineHouseSizePts = function(Housesize) {
+const determineHouseSizePts = (Housesize = "Small") => {
     let carbonFootprintPoints = 0;
     if ( Housesize === "large") {
         carbonFootprintPoints = 10;
@@ -15,7 +15,7 @@ const determineHouseSizePts = function(Housesize) {
 }
 
 
-const determineHouseHoldPts = function(numberInHousehold) {
+const determineHouseHoldPts = (numberInHousehold = 1) => {
     let houseHoldPoints = 0;
     if (numberInHousehold === 1) {
         houseHoldPoints = 14;
