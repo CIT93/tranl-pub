@@ -92,3 +92,4 @@ I started working on the index.html and work on the alert by creating a span for
 - Based on the your question, 2 functions that we use quite frequently that I notice are the Household Members, House Size, as it is shown on the form of the website, so I choose those. The main function for those are in the carbonpoints.js so I started working on those. 
 - I figured that I had to change the variable in the carbonpoints.js first and foremost to update their parameters. For that I chose the "small" for the house size and the "1" for the number in household since they are the smallest values and should be easy to track. 
 - At this point, for part 3 I kinda have a brain fart and unsure of what to do on how to implement the rest operator so I'll submit what I have and wait feedback from classmates. I'll update it again later. 
+- I decided to code from the solution videos. 
