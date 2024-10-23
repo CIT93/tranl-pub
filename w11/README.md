@@ -109,4 +109,15 @@ I started working on the index.html and work on the alert by creating a span for
 - I realize that I had gotten side track and missed some details so I went back and fix everything i can. 
 
 # Week 11 Pub Coding Challenge
-- Staring off, I create a new div based on the the new food choices, and labed it as foodType. It consists of all the various food options to calculate the points value. 
+- Staring off, I create a new div based on the the new food choices, and labed it as foodChoice. It consists of all the various food options to calculate the points value. 
+- I started giving them id and then head over to fp.js to create a new calculation value.
+- I updated the constructor class to accept the new foodChoice variable. Then i started to write the formulation for it 
+- I updated the submit button for the EventListener to accept the new food type
+- I forgot to update the render for the food row so I updated it in render.js, I insert the new "Food Type" option after the "Footprint Points"
+- The render came out wrong then I notice I didn't add a new form in the render for it, so I did it. 
+- It still came up as wrong, as the total points value wouldn't render, and the action buttons is listed under footprint points
+- It took me forever to notice but I input the values wrong in the fp.js, which explain why it did not function correctly
+- I notice that I was missing something in the constructor for the points itself, so I went back and added it
+- At this point, everything looks mostly functional, except for some options where it display incorrectly. 
+- Most of the input managed to work except it keeps displaying wrong on the medium size house so I went back into the fp.js and notice that I named it incorrectly. So i fix it and it manage to work
+- At this point, everything looks functional and there's no error on the console so I'll submit what i have. 
