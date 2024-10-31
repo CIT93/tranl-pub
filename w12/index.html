@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 12 - Excerise Counter</title>
+    <script type="module" defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset id="fieldset">
+            <legend>Time to get FIT!</legend>
+            <div>
+                <label>Type of Exercise:</label>
+                <select name="exerciseType" required>
+                    <option value="">---Select a workout---</option>
+                    <option value="Pullups">Pull ups</option>
+                    <option value="Curls">Curls</option>
+                    <option value="Squats">Squats</option>
+                    <option value="Jogging">Jogging</option>
+                </select>
+            </div>
+            <div>
+                <label>Target Number of Reps:</label>
+                <input type="number" name="Repsnumber" id="number" required>
+            </div>
+            <div>
+                <label>Time in Minutes:</label>
+                <input type="number" name="Time" id="time" required>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="output"><div>
+    <h1>Submit to start!</h1>
+</body>
+</html>
