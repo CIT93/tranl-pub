@@ -121,3 +121,11 @@ I started working on the index.html and work on the alert by creating a span for
 - At this point, everything looks mostly functional, except for some options where it display incorrectly. 
 - Most of the input managed to work except it keeps displaying wrong on the medium size house so I went back into the fp.js and notice that I named it incorrectly. So i fix it and it manage to work
 - At this point, everything looks functional and there's no error on the console so I'll submit what i have. 
+
+# week 15 Coding Challenge
+- First off, between the options of creating a new module or write a new function, i decided to went for the function
+- I decided to head to render.js and start to write the calculations for it. Using the total value from all the points together and divited by the data to get the average calculation
+- With the calculation function finish, I went below it to create a new function that can render the rows. 
+- After some trials and errors, I manage to create a functional row but since I have no idea how to get the result to display further out into the table, I decided to look for some reference and ask chatGPT
+- I then basically recall the calculation function to display the result
+- I also then call it onto the renderTbl = data to actually make it display properly

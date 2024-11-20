@@ -78,7 +78,23 @@ const renderTbl = data => {
     const tbody = renderTblBody(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
+    addRow(table, data);
   }
+}
+
+const calculateAverage = (data) => {
+  if (data.length === 0) return 0; 
+  const total = data.reduce((sum, item) => sum + item.total, 0);
+  return (total / data.length);
+};
+
+function addRow(table, data) {
+  const newRow = table.insertRow(); 
+  const newCell = newRow.insertCell(0); 
+  newCell.textContent = `Average Food Value: `;
+  const avgCell = newRow.insertCell(1); 
+  newCell.colSpan = 5; // This part I had to use google and chatGPT since I have no idea how you can render the result all the way to the right side
+  avgCell.textContent = calculateAverage(data); 
 }
 
 
