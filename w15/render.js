@@ -4,6 +4,7 @@ import { saveLS } from "./storage.js";
 const renderTblHeading = () => {
   // TBL.innerHTML = "";
   const table = document.createElement("table");
+  table.setAttribute("id", "table-id")
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = [
@@ -78,25 +79,25 @@ const renderTbl = data => {
     const tbody = renderTblBody(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
-    addRow(table, data);
+    calculateAvg(data)
   }
 }
 
-const calculateAverage = (data) => {
-  if (data.length === 0) return 0; 
-  const total = data.reduce((sum, item) => sum + item.total, 0);
-  return (total / data.length);
-};
+const calculateAvg = (data) => {
+  const reduceTotal = data.reduce((sum, ea) => sum + ea.total, 0)
+  const tableRef = document.getElementById("table-id")
+  let newRow = tableRef.insertRow(-1)
+  let newCell = newRow.insertCell(0)
+  let newCell_1 = newRow.insertCell(0)
+  let newCell_2 = newRow.insertCell(0)
+  let newCell_3 = newRow.insertCell(0)
+  let newCell_4 = newRow.insertCell(0)
+  let newLabl = document.createTextNode(`Average Footprint`)
+  let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`)
+  newCell_1.appendChild(newLabl)
+  newCell.appendChild(newText)
 
-function addRow(table, data) {
-  const newRow = table.insertRow(); 
-  const newCell = newRow.insertCell(0); 
-  newCell.textContent = `Average Food Value: `;
-  const avgCell = newRow.insertCell(1); 
-  newCell.colSpan = 5; // This part I had to use google and chatGPT since I have no idea how you can render the result all the way to the right side
-  avgCell.textContent = calculateAverage(data); 
 }
-
 
 export { renderTbl, renderTblHeading };
 
