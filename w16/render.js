@@ -49,6 +49,7 @@ const renderTblBtn = (obj, index, data) => {
     FORM.foodSource.value = obj.foodSource;
     FORM.water.value = obj.waterConsumPoints.toString();
     FORM.washingMachine.value = obj.washingMachinePoints.toString();
+    FORM.purchases.value = obj.purchasesPoints.toString();
     onUpdate(index, data);
   })
   return td;
