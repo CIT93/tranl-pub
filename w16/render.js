@@ -43,13 +43,13 @@ const renderTblBtn = (obj, index, data) => {
   buttonEdit.addEventListener('click', e => {
     FORM.firstName.value = obj.first;
     FORM.lastName.value = obj.last;
-    FORM.houses.value = obj.houseMembers;
-    FORM.housem.value = obj.houseSize;
+    FORM.houses.value = obj.houseSize;
+    FORM.housem.value = obj.houseMembers;
     FORM.foodChoice.value = obj.foodChoice;
     FORM.foodSource.value = obj.foodSource;
-    FORM.water.value = obj.waterConsumPoints.toString();
-    FORM.washingMachine.value = obj.washingMachinePoints.toString();
-    FORM.purchases.value = obj.purchasesPoints.toString();
+    FORM.water.value = obj.waterValue;
+    FORM.dish_washer.checked = obj.both;
+    FORM.purchases.value = obj.purchasesPoints;
     onUpdate(index, data);
   })
   return td;

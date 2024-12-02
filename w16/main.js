@@ -3,7 +3,7 @@ import {
   determineHouseHoldPts,
   determineHouseSizePts,
 } from "./carbonpoints.js";
-import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
+import { FORM, FNAME, LNAME, SUBMIT, WATER, BOTH } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
 
@@ -54,15 +54,25 @@ FORM.addEventListener("submit", e => {
       e.target.houses.value,
       e.target.foodChoice.value,
       e.target.foodSource.value,
-      parseInt(e.target.water.value),
-      parseInt(e.target.washingMachine.value),
-      parseInt(e.target.purchases.value),
+      e.target.water.value,
+      e.target.dish_washer.checked ? parseInt(e.target.water.value) * 2 : parseInt(e.target.water.value),
+      e.target.dish_washer.checked,
+      parseInt(e.target.purchases.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);
     renderTbl(cfpData);
+    FORM.reset();
+    BOTH.disabled = false;
   } else {
     SUBMIT.textContent = "Form requires first name and last name";
   }
-  renderTbl(cfpData);
 });
+
+WATER.addEventListener("change", e => {
+  if(parseInt(WATER.value) === 0) {
+    BOTH.disabled = true;
+  } else {
+    BOTH.disabled = false;
+  }
+})
