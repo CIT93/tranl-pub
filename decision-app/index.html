@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Skin Select</title>
+  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Skin Select</legend>
+            <label for="">Please choose your skin concern:</label>
+            <select id="skinConcern" required>
+              <option value="">--Select--</option>
+              <option value="acne">Acne</option>
+              <option value="dehydrated">Dehydrated</option>
+              <option value="combination">Combination</option>
+              <option value="oily">Oily</option>
+            </select>
+        </div>
+        <div>
+          <label for="">Is your skin sensitive? </label>
+        <select name="sensitive" id="sensitive" required>
+          <option value="">---Select:---</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <label for="sensitivityLevel">Skin Sensitivity Level:</label>
+        <input type="range" id="sensitivityLevel" name="sensitivityLevel" min="1" max="10">
+      </div>
+      </fieldset>
+      <button type="submit">Submit</button>
+      <span id="submitError" class="error"></span>
+        </div>
+    </form>
+    <div id="output"></div>
+    <table id="tab-data"></table>
+  </body>
+</html>
