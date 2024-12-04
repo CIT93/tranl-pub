@@ -57,7 +57,9 @@ const renderTblBtn = (obj, index, data) => {
     FORM.aluminum.checked = obj.recycle.aluminum;
     FORM.food.checked = obj.recycle.food;
     FORM.waste.value = obj.wastePoints;
-
+    FORM.vehicle.value = obj.vehiclePoints;
+    FORM.transport.value = obj.transportPoints;
+    FORM.flights.value = obj.flightsTransPoints;
     onUpdate(index, data);
   })
   return td;
@@ -106,4 +108,3 @@ const calculateAvg = (data) => {
 }
 
 export { renderTbl, renderTblHeading };
-
