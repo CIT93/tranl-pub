@@ -15,6 +15,7 @@ const renderHeader = () => {
       <th>Routine</th>
       <th>Edit</th>
       <th>Delete</th>
+      <th>Purchase Now</th>
     </tr>`;
 };
 
@@ -36,16 +37,25 @@ const renderTable = (skinConcern, isSensitive, routine) => {
 
   const tdEdit = document.createElement("td");
   const tdDel = document.createElement("td");
+  const tdShop = document.createElement("td"); 
   const buttonEdit = document.createElement("button");
   const buttonDel = document.createElement("button");
+  const buttonShop = document.createElement("button"); 
 
   buttonEdit.textContent = "Edit";
   buttonDel.textContent = "Del";
+  buttonShop.textContent = "Shop Here";
 
   tdEdit.appendChild(buttonEdit);
   tdDel.appendChild(buttonDel);
+  tdShop.appendChild(buttonShop);
   row.appendChild(tdEdit);
   row.appendChild(tdDel);
+  row.appendChild(tdShop);
+
+  buttonShop.addEventListener("click", () => {
+    window.open("https://www.yesstyle.com/en/home.html", "_blank");
+  });
 
   buttonEdit.addEventListener("click", () => {
   document.getElementById("skinConcern").value = skinConcern;
