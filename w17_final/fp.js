@@ -1,5 +1,20 @@
 class FP {
   constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterValue, waterConsum, both, purchases, waste, recycle, vehicle, transport, flights ) {
+    console.log("First Name:", first);
+  console.log("Last Name:", last);
+  console.log("House Members:", houseMembers);
+  console.log("House Size:", houseSize);
+  console.log("Food Choice:", foodChoice);
+  console.log("Food Source:", foodSource);
+  console.log("Water Value:", waterValue);
+  console.log("Water Consumption:", waterConsum);
+  console.log("Both:", both);
+  console.log("Purchases:", purchases);
+  console.log("Waste:", waste);
+  console.log("Recycle:", recycle);
+
+
+
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
