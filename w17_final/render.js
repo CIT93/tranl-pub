@@ -59,7 +59,7 @@ const renderTblBtn = (obj, index, data) => {
     FORM.waste.value = obj.wastePoints;
     FORM.vehicle.value = obj.vehiclePoints;
     FORM.transport.value = obj.transportPoints;
-    FORM.flights.value = obj.flightsTransPoints;
+    FORM.flights.value = obj.flightsPoints;
     onUpdate(index, data);
   })
   return td;

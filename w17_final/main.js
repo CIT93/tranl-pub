@@ -1,13 +1,9 @@
 import { renderTbl } from "./render.js";
-import {
-  determineHouseHoldPts,
-  determineHouseSizePts,
-} from "./carbonpoints.js";
 import { FORM, FNAME, LNAME, SUBMIT, WATER, BOTH } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
 
-
+renderTbl(cfpData);
 const determineRecycleItems = e => {
   const numberChecked = document.querySelectorAll('.recycle:checked').length;
   return {
@@ -21,24 +17,9 @@ const determineRecycleItems = e => {
   }
 }
 
-const start = (...i) => {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
-  const total = houseHoldPTS + houseSizePTS;
-  cfpData.push({
-    firstName: i[0],
-    lastName: i[1],
-    houseM: i[2],
-    houseS: i[3],
-    houseMPTS: houseHoldPTS,
-    houseSPTS: carbonHouseSizePts,
-    cfpTotal: total,
-  });
-};
 
-renderTbl(cfpData);
 
-// New validateField Event
+
 const validateField = (event) => {
   const field = event.target.value;
   const fieldId = event.target.id;
@@ -52,7 +33,7 @@ const validateField = (event) => {
     event.target.classList.remove("invalid");
   }
 };
-// Attach blur event listeners
+
 FNAME.addEventListener("blur", validateField);
 LNAME.addEventListener("blur", validateField);
 

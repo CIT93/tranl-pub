@@ -14,12 +14,11 @@ class FP {
     this.recycle = recycle;
     this.vehiclePoints = vehicle;
     this.transportPoints = transport;
-    this.flightsTransPoints = flights;
+    this.flightsPoints = flights;
     this.calHouseHoldPoints();
     this.calHouseSizePoints();
     this.calFoodChoicePoints();
     this.calFoodSourcePoints();
-    this.calRecyclePoints();
     this.calTotal();
   }
 
@@ -81,17 +80,6 @@ class FP {
   }
 }
 
-calRecyclePoints() {
-  let basePoints = 24; 
-  if (this.recycle) {
-      const recyclableItems = Object.values(this.recycle);
-      const recycleCount = recyclableItems.filter(item => item).length;
-      this.recyclePoints = basePoints - (recycleCount * 4);
-  } else {
-      this.recyclePoints = basePoints; 
-  }
-}
-
   calTotal() {
     this.total =
       this.houseHoldPoints +
@@ -104,7 +92,7 @@ calRecyclePoints() {
       this.wastePoints +
       this.vehiclePoints +
       this.transportPoints +
-      this.flightsTransPoints;
+      this.flightsPoints;
   };
 }
 
